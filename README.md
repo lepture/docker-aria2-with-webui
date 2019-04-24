@@ -30,7 +30,7 @@ If you don't want to customize anything, use:
 sudo docker run -d \
 --name aria2-with-webui \
 -p 6800:6800 \
--p 6880:80 \
+-p 6880:6880 \
 -v /DOWNLOAD_DIR:/data \
 -e SECRET=YOUR_SECRET_CODE \
 -e PGID=100 \
@@ -50,7 +50,7 @@ custom `aria2.conf` configuration:
 sudo docker run -d \
 --name aria2-with-webui \
 -p 6800:6800 \
--p 6880:80 \
+-p 6880:6880 \
 -v /DOWNLOAD_DIR:/data \
 -v /CONFIG_DIR:/conf \
 -e PGID=100 \
@@ -75,7 +75,7 @@ Example compose configuration:
     network_mode: "bridge"
     ports:
       - 6800:6800
-      - 6880:80
+      - 6880:6880
     volumes:
       - /volume1/Download/complete:/data
       - /volume1/docker/Aria2:/conf
